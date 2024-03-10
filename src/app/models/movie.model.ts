@@ -7,5 +7,12 @@ export interface Movie {
   title: string,
   video: boolean,
   vote_count: number,
-  rating: number
+  rating: number,
+  tagline: string,
+  genres: Genre[];
+}
+
+interface Genre {
+  id: number;
+  name: string;
 }

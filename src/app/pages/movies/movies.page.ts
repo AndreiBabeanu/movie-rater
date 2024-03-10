@@ -6,13 +6,14 @@ import {MovieService} from "../../services/movie.service";
 import {BehaviorSubject} from "rxjs";
 import {Movie} from "../../models/movie.model";
 import {image} from "ionicons/icons";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-movies',
   templateUrl: './movies.page.html',
   styleUrls: ['./movies.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule, ReactiveFormsModule]
+  imports: [IonicModule, CommonModule, FormsModule, ReactiveFormsModule, RouterLink]
 })
 export class MoviesPage implements OnInit {
   public popularMovies$: BehaviorSubject<Movie[]> = new BehaviorSubject<Movie[]>([]);

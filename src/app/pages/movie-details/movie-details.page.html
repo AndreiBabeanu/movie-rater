@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="/movies"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{(movie$ | async)?.original_title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <img [src]="imageBaseUrl + '/w400' + (movie$| async)?.poster_path" />
+    <ion-card-header>
+      <ion-card-title>
+        {{(movie$| async)?.title}}
+      </ion-card-title>
+      <ion-card-subtitle>
+        {{(movie$| async)?.tagline}}
+      </ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-text>
+        {{(movie$| async)?.overview}}
+      </ion-text>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
