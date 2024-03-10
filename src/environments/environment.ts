@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  tmdbApi: {
+    key: '99b9667167327c601b1fec9b12c6a4ea'
+  }
 };
 
 /*
