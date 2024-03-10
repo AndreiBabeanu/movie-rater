@@ -1,0 +1,7 @@
+{
+  "name": "movie-rater",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
