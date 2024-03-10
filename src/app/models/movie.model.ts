@@ -9,7 +9,9 @@ export interface Movie {
   vote_count: number,
   rating: number,
   tagline: string,
-  genres: Genre[];
+  genres: Genre[],
+  release_date: string,
+  vote_average: number
 }
 
 interface Genre {

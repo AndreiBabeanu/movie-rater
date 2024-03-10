@@ -12,9 +12,11 @@
         <ion-avatar>
           <img [src]="imageBaseUrl + '/w92' + movie.poster_path"/>
         </ion-avatar>
-        <ion-title>
-          {{movie.original_title}}
-        </ion-title>
+        <ion-label class="ion-text-wrap ion-margin-start">
+          <h3>{{movie.original_title}}</h3>
+          <p>{{movie.release_date | date:'mediumDate'}}</p>
+        </ion-label>
+        <ion-badge slot="end"> {{movie.vote_average}} </ion-badge>
       </ion-item>
     </ion-list>
     <ng-template #noMatchesFound>
