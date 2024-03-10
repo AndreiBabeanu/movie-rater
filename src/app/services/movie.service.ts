@@ -4,6 +4,7 @@ import { environment as env } from 'src/environments/environment';
 import {EMPTY, map, Observable, tap} from "rxjs";
 import {TmdbApiResult} from "../models/api-movie.model";
 import {Movie} from "../models/movie.model";
+import {MovieDetails} from "../models/movie-details.model";
 
 @Injectable({
   providedIn: 'root'
@@ -24,7 +25,7 @@ export class MovieService {
       );
   }
 
-  public getMovieDetails(movieId: string): Observable<any> {
+  public getMovieDetails(movieId: string): Observable<MovieDetails> {
     if (!movieId) {
       return EMPTY;
     }

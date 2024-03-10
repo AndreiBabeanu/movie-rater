@@ -8,8 +8,8 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-card>
-    <img [src]="imageBaseUrl + '/w400' + (movie$| async)?.poster_path" />
+  <ion-card class="ion-no-margin">
+    <img alt="movieDetails" [src]="imageBaseUrl + '/w400' + (movie$| async)?.poster_path" />
     <ion-card-header>
       <ion-card-title>
         {{(movie$| async)?.title}}

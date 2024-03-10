@@ -4,8 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import {MovieService} from "../../services/movie.service";
 import {ActivatedRoute, Router} from "@angular/router";
-import {Movie} from "../../models/movie.model";
 import {Observable} from "rxjs";
+import {MovieDetails} from "../../models/movie-details.model";
 
 @Component({
   selector: 'app-movie-details',
@@ -18,7 +18,7 @@ export class MovieDetailsPage implements OnInit {
   private MOVIE_ID_KEY: string = 'id';
   public imageBaseUrl = 'https://image.tmdb.org/t/p';
 
-  public movie$: Observable<Movie> = new Observable<Movie>();
+  public movie$: Observable<MovieDetails> = new Observable<MovieDetails>();
 
   constructor(private _movieService: MovieService,
               private _route: ActivatedRoute,
@@ -37,7 +37,7 @@ export class MovieDetailsPage implements OnInit {
       this._router.navigateByUrl('/movies');
       return '';
     }
-    return <string>movieId;
+    return movieId;
   }
 
 }

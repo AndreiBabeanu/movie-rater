@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar class="ion-align-items-center">
-    <ion-title slot="start">Movies</ion-title>
+    <ion-title slot="start">Trending Movies</ion-title>
     <ion-searchbar slot="end" [formControl]="searchBarFormControl"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +9,9 @@
   <ion-content>
     <ion-list *ngIf="(filteredPopularMovies$ | async)?.length; else noMatchesFound">
       <ion-item button="true" [routerLink]="['/details', movie.id]" *ngFor="let movie of filteredPopularMovies$ | async" >
-        <ion-avatar>
-          <img [src]="imageBaseUrl + '/w92' + movie.poster_path"/>
-        </ion-avatar>
+        <ion-thumbnail>
+          <img alt="movieImage" [src]="imageBaseUrl + '/w92' + movie.poster_path"/>
+        </ion-thumbnail>
         <ion-label class="ion-text-wrap ion-margin-start">
           <h3>{{movie.original_title}}</h3>
           <p>{{movie.release_date | date:'mediumDate'}}</p>
